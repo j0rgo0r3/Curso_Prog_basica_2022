@@ -1,3 +1,5 @@
+let ataqueJugador
+
 function seleccionarMascotaJugador() {
     //alert("Seleccionaste a tu Mokepon");
     let hipodoge_selected = document.getElementById("hipodoge").checked;
@@ -54,11 +56,17 @@ function seleccionarMascotaEnemigo() {
     }
 }
 
-function ataqueFuego() {}
+function ataqueFuego() {
+    ataqueJugador = "fuego";
+}
 
-function ataqueAgua() {}
+function ataqueAgua() {
+    ataqueJugador = "agua";
+}
 
-function ataqueTierra() {}
+function ataqueTierra() {
+    ataqueJugador = "tierra";
+}
 
 window.addEventListener("load", iniciarJuego)
 
