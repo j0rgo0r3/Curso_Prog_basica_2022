@@ -1,4 +1,5 @@
 let ataqueJugador
+let ataqueEnemigo
 
 function seleccionarMascotaJugador() {
     //alert("Seleccionaste a tu Mokepon");
@@ -57,15 +58,42 @@ function seleccionarMascotaEnemigo() {
 }
 
 function ataqueFuego() {
-    ataqueJugador = "fuego";
+    ataqueJugador = "FUEGO";
+    ataqueAleatorioEnemigo();
 }
 
 function ataqueAgua() {
-    ataqueJugador = "agua";
+    ataqueJugador = "AGUA";
+    ataqueAleatorioEnemigo();
 }
 
 function ataqueTierra() {
-    ataqueJugador = "tierra";
+    ataqueJugador = "TIERRA";
+    ataqueAleatorioEnemigo();
+}
+
+function ataqueAleatorioEnemigo() {
+    let ataqueAleatorio = aleatorio(1, 3);
+    if (ataqueAleatorio == 1) {
+        ataqueEnemigo = "FUEGO";
+    }
+    else if (ataqueAleatorio == 2) {
+        ataqueEnemigo = "AGUA";
+    }
+    else {
+        ataqueEnemigo = "TIERRA";
+    }
+
+    crearMensaje()
+}
+
+function crearMensaje() {
+    let parrafo = document.createElement('p');
+    let sectionMensajes = document.getElementById("mensajes");
+
+    parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", la mascota de tu contrincante ataco con " + ataqueEnemigo;
+    
+    sectionMensajes.appendChild(parrafo);
 }
 
 window.addEventListener("load", iniciarJuego)
