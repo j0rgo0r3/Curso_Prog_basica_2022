@@ -84,14 +84,25 @@ function ataqueAleatorioEnemigo() {
         ataqueEnemigo = "TIERRA";
     }
 
-    crearMensaje()
+    combate()
 }
 
-function crearMensaje() {
+function combate() {
+    if(ataqueEnemigo == ataqueJugador) {
+        crearMensaje("EMPATE");
+    }else if ((ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA") || (ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") || (ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA")) {
+        crearMensaje("GANASTE");
+    } else {
+        crearMensaje("PERDISTE");
+    }
+
+}
+
+function crearMensaje(mensaje) {
     let parrafo = document.createElement('p');
     let sectionMensajes = document.getElementById("mensajes");
 
-    parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", la mascota de tu contrincante ataco con " + ataqueEnemigo;
+    parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", la mascota de tu contrincante ataco con " + ataqueEnemigo + "- " + mensaje;
     
     sectionMensajes.appendChild(parrafo);
 }
