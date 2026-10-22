@@ -9,7 +9,7 @@ function seleccionarMascotaJugador() {
     settionSeleccionarMascota.style.display = "none"
     
     let sectionSeleccionarAtaque = document.getElementById("Seleccionar-ataque");
-    sectionSeleccionarAtaque.style.display = "block"
+    sectionSeleccionarAtaque.style.display = "flex"
 
     let hipodoge_selected = document.getElementById("hipodoge").checked;
     let capipepo_selected = document.getElementById("capipepo").checked;
@@ -164,5 +164,3 @@ function crearMensaje(mensaje) {
 }
 
 window.addEventListener("load", iniciarJuego)
-
-
