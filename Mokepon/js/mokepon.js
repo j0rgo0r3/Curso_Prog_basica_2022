@@ -1,21 +1,27 @@
-let sectionReininiciar = document.getElementById("reiniciar")
-let sectionSeleccionarAtaque = document.getElementById("Seleccionar-ataque");
-let botonMascotaJugador = document.getElementById("boton-mascota")
-let botonFuego = document.getElementById("boton-fuego")
-let botonAgua = document.getElementById("boton-agua")
-let botonTierra = document.getElementById("boton-tierra")
-let botonReiniciar = document.getElementById("boton-reiniciar")
+const sectionReininiciar = document.getElementById("reiniciar")
+const sectionSeleccionarAtaque = document.getElementById("Seleccionar-ataque");
+const botonMascotaJugador = document.getElementById("boton-mascota")
+const botonFuego = document.getElementById("boton-fuego")
+const botonAgua = document.getElementById("boton-agua")
+const botonTierra = document.getElementById("boton-tierra")
+const botonReiniciar = document.getElementById("boton-reiniciar")
 
-let sectionSeleccionarMascota = document.getElementById("Seleccionar-mascota");
-let hipodoge_selected = document.getElementById("hipodoge")
-let capipepo_selected = document.getElementById("capipepo")
-let ratigueya_selected = document.getElementById("ratigueya")
-let spanMascotaJugador = document.getElementById("mascota-jugador")
+const sectionSeleccionarMascota = document.getElementById("Seleccionar-mascota");
+const hipodoge_selected = document.getElementById("hipodoge")
+const capipepo_selected = document.getElementById("capipepo")
+const ratigueya_selected = document.getElementById("ratigueya")
+const spanMascotaJugador = document.getElementById("mascota-jugador")
 
-let spanMascotaEnemigo = document.getElementById("mascota-enemigo");
+const spanMascotaEnemigo = document.getElementById("mascota-enemigo");
 
-let spanVidasJugador = document.getElementById("vidas-jugador");
-let spanVidasEnemigo = document.getElementById("vidas-enemigo");
+const spanVidasJugador = document.getElementById("vidas-jugador");
+const spanVidasEnemigo = document.getElementById("vidas-enemigo");
+
+const sectionNuevoMensajes = document.getElementById("resultado")
+const AtaqueJugador = document.getElementById("ataques-del-jugador")
+const AtaqueEnemigo = document.getElementById("ataques-del-enemigo")
+
+const sectionMensajes = document.getElementById("resultado")
 
 let ataqueJugador
 let ataqueEnemigo
@@ -128,21 +134,10 @@ function revisarVidas() {
 }
 
 function crearMensajeFinal(resultadoFinal) {
-
-    let sectionMensajes = document.getElementById("resultado");
-
     sectionMensajes.innerHTML = resultadoFinal;
-
-    // sectionMensajes.appendChild(parrafo);
-
-    let botonFuego = document.getElementById("boton-fuego")
-    let botonAgua = document.getElementById("boton-agua")
-    let botonTierra = document.getElementById("boton-tierra")
     botonFuego.disabled = true;
     botonAgua.disabled = true;
     botonTierra.disabled = true;
-
-    let sectionReininiciar = document.getElementById("reiniciar")
     sectionReininiciar.style.display = "block"
 
 }
@@ -152,13 +147,7 @@ function reiniciarJuego() {
 }
 
 function crearMensaje(mensaje) {
-    let sectionNuevoMensajes = document.getElementById("resultado");
-    let AtaqueJugador = document.getElementById("ataques-del-jugador");
-    let AtaqueEnemigo = document.getElementById("ataques-del-enemigo");
 
-    //let parrafo = document.createElement('p');
-    //let sectionMensajes = document.getElementById("resultado");
-    //let nuevoMensaje = document.createElement('p');
     let nuevoAtaqueJugador = document.createElement('p');
     let nuevoAtaqueEnemigo = document.createElement('p');
 
@@ -166,7 +155,6 @@ function crearMensaje(mensaje) {
     nuevoAtaqueJugador.innerHTML = ataqueJugador
     nuevoAtaqueEnemigo.innerHTML = ataqueEnemigo
 
-    //sectionNuevoMensajes.appendChild(nuevoMensaje);
     AtaqueJugador.appendChild(nuevoAtaqueJugador);
     AtaqueEnemigo.appendChild(nuevoAtaqueEnemigo);
 
