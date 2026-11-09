@@ -105,13 +105,13 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarAtaque.style.display = "flex"
 
     if (hipodoge_selected.checked) {
-        spanMascotaJugador.innerHTML = "Hipodoge"
+        spanMascotaJugador.innerHTML = hipodoge_selected.id
     }
     else if (capipepo_selected.checked) {
-        spanMascotaJugador.innerHTML = "Capipepo"
+        spanMascotaJugador.innerHTML = capipepo_selected.id
     }
     else if (ratigueya_selected.checked) {
-        spanMascotaJugador.innerHTML = "Ratigueya"
+        spanMascotaJugador.innerHTML = ratigueya_selected.id
     }
     else {
        console.log("No seleccionaste ninguna mascota")
@@ -126,9 +126,9 @@ function aleatorio(min, max) {
 
 
 function seleccionarMascotaEnemigo() {
-    let ataqueAleatoria = aleatorio(1, 3);
+    let ataqueAleatoria = aleatorio(0, mokepones.length - 1);
 
-    if (ataqueAleatoria == 1) {
+   /* if (ataqueAleatoria == 1) {
         spanMascotaEnemigo.innerHTML = "Hipodoge";
     }
     else if (ataqueAleatoria == 2) {
@@ -136,7 +136,9 @@ function seleccionarMascotaEnemigo() {
     }
     else {
         spanMascotaEnemigo.innerHTML = "Ratigueya";
-    }
+    }*/
+
+        spanMascotaEnemigo.innerHTML = mokepones[ataqueAleatoria].nombre
 }
 
 function ataqueFuego() {
