@@ -27,6 +27,7 @@ let mokepones = []
 let opcionDeMokepones
 let ataqueJugador
 let ataqueEnemigo
+let mascotaJugador
 let hipodoge_selected
 let capipepo_selected
 let ratigueya_selected
@@ -106,17 +107,20 @@ function seleccionarMascotaJugador() {
 
     if (hipodoge_selected.checked) {
         spanMascotaJugador.innerHTML = hipodoge_selected.id
+        mascotaJugador = hipodoge_selected.id
     }
     else if (capipepo_selected.checked) {
         spanMascotaJugador.innerHTML = capipepo_selected.id
+        mascotaJugador = capipepo_selected.id
     }
     else if (ratigueya_selected.checked) {
         spanMascotaJugador.innerHTML = ratigueya_selected.id
+        mascotaJugador = ratigueya_selected.id
     }
     else {
        console.log("No seleccionaste ninguna mascota")
     }
-
+    extraerAtaques(mascotaJugador)
     seleccionarMascotaEnemigo()
 }
 
@@ -124,6 +128,16 @@ function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function extraerAtaques(mascotaJugador) {
+    let ataques 
+    for (let i = 0; i < mokepones.length; i++) {
+        if(mascotaJugador === mokepones[i].nombre) {
+            ataques = mokepones[i].ataques
+        }
+    }
+    //console.log(ataques)
+    mostrarAtaques(ataques)
+}
 
 function seleccionarMascotaEnemigo() {
     let ataqueAleatoria = aleatorio(0, mokepones.length - 1);
